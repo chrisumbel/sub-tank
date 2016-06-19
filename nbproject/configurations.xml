@@ -8,6 +8,8 @@
       <itemPath>logging.h</itemPath>
       <itemPath>distance.h</itemPath>
       <itemPath>hardware_configuration.h</itemPath>
+      <itemPath>sonar_servo.h</itemPath>
+      <itemPath>drive_motors.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -24,6 +26,8 @@
       <itemPath>itoa.c</itemPath>
       <itemPath>logging.c</itemPath>
       <itemPath>distance.c</itemPath>
+      <itemPath>sonar_servo.c</itemPath>
+      <itemPath>drive_motors.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
