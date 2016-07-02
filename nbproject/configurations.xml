@@ -10,14 +10,11 @@
       <itemPath>hardware_configuration.h</itemPath>
       <itemPath>sonar_servo.h</itemPath>
       <itemPath>drive_motors.h</itemPath>
+      <itemPath>delay.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
-    </logicalFolder>
-    <logicalFolder name="f1" displayName="New Folder 1" projectFiles="true">
-    </logicalFolder>
-    <logicalFolder name="f2" displayName="New Folder 2" projectFiles="true">
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -28,6 +25,7 @@
       <itemPath>distance.c</itemPath>
       <itemPath>sonar_servo.c</itemPath>
       <itemPath>drive_motors.c</itemPath>
+      <itemPath>delay.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

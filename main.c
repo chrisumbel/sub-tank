@@ -36,22 +36,38 @@ void main() {
     MOTOR_RIGHT_2_LAT = 0;    
     
     ei();     // This is like fliping the master switch to enable interrupt
-
-    servo_set_pct(0.05);
     
     while (1) {
         itoa(i, s);
         log_message(s);
         log_message(": ");
-        
-        int d = distance_capture();
-        itoa(d, s);
-        log_message_ln(s);                
-        log_message_ln("===============");
-        
+                
         i++;
+
+        log_message_ln("===============");
+
+        servo_turn(SERVO_LEFT);
         
-        for(j = 0; j  < 10; j++) {
+        int right_distance = distance_capture();
+        itoa(right_distance, s);
+        log_message("right: ");
+        log_message_ln(s);
+
+        servo_turn(SERVO_CENTER);        
+       
+        int center_distance = distance_capture();
+        itoa(center_distance, s);
+        log_message("center: ");                
+        log_message_ln(s);                
+
+        servo_turn(SERVO_RIGHT);
+        
+        int left_distance = distance_capture();
+        itoa(left_distance, s);
+        log_message("left: ");        
+        log_message_ln(s);                        
+        
+        for(j = 0; j  < 100; j++) {
             __delay_ms(10);
         }
     }    

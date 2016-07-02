@@ -1,6 +1,7 @@
 #include <xc.h>
 #include <pic18f2550.h>
 #include "sonar_servo.h"
+#include "hardware_configuration.h"
 
 int _i = 0;
 
@@ -9,6 +10,15 @@ int _i = 0;
 
 float pct = 0.5;
 int fall_at = 5;
+
+void servo_turn(float pos) {
+    int j;
+    servo_set_pct(pos);
+
+    for(j = 0; j  < 30; j++) {
+        __delay_ms(10);
+    }    
+}
 
 int servo_set_pct(float _pct) {
     pct = _pct;
