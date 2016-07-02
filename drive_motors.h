@@ -26,9 +26,15 @@ extern "C" {
 #define MOTOR_RIGHT_1_LAT LATB4
 #define MOTOR_RIGHT_2_LAT LATB3
 
-
-void drive_motors_init();
+#define MOTOR_TURN_WAIT     100
+#define MOTOR_FORWARD_WAIT  200
     
+void drive_motors_init();
+
+void drive_motors_turn_left();
+void drive_motors_turn_right();
+void drive_motors_move_forward();
+
 #ifdef	__cplusplus
 }
 #endif

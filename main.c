@@ -17,6 +17,12 @@
 #include "drive_motors.h"
 #include <plib/timers.h>
 
+#define DISTANCE_THRESHOLD 100
+
+#define DIRECTION_LEFT     -1
+#define DIRECTION_STRAIGHT  0
+#define DIRECTION_RIGHT     1
+
 void main() {
     OSCCON = 0b01110000;
     CMCON = 7;
@@ -28,12 +34,6 @@ void main() {
     distance_init();    
     servo_init();
     drive_motors_init();
-    
-    MOTOR_LEFT_1_LAT = 1;
-    MOTOR_LEFT_2_LAT = 0;
-    
-    MOTOR_RIGHT_1_LAT = 1;    
-    MOTOR_RIGHT_2_LAT = 0;    
     
     ei();     // This is like fliping the master switch to enable interrupt
     
@@ -66,9 +66,24 @@ void main() {
         itoa(left_distance, s);
         log_message("left: ");        
         log_message_ln(s);                        
+                
+        int left_delta = left_distance - center_distance;
+        int right_delta = right_distance - center_distance;
         
-        for(j = 0; j  < 100; j++) {
-            __delay_ms(10);
+        if(left_delta > DISTANCE_THRESHOLD || right_delta > DISTANCE_THRESHOLD) {
+            int direction = DIRECTION_LEFT;
+            
+            if(right_delta > left_delta) {
+                direction = DIRECTION_RIGHT;
+            }
+            
+            if(direction == DIRECTION_LEFT) {
+                drive_motors_turn_left();
+            } else {
+                drive_motors_turn_right();
+            }
         }
+        
+        drive_motors_move_forward();
     }    
 }
