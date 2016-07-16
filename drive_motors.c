@@ -55,3 +55,11 @@ void drive_motors_move_forward() {
     
     wait(MOTOR_FORWARD_WAIT);    
 }
+
+void drive_motors_move_stop() {
+    MOTOR_LEFT_1_LAT = 0;
+    MOTOR_LEFT_2_LAT = 0;
+    
+    MOTOR_RIGHT_1_LAT = 0;    
+    MOTOR_RIGHT_2_LAT = 0;    
+}

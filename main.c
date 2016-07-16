@@ -85,5 +85,6 @@ void main() {
         }
         
         drive_motors_move_forward();
+        drive_motors_move_stop();
     }    
 }
