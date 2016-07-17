@@ -26,7 +26,7 @@ extern "C" {
 #define MOTOR_RIGHT_1_LAT LATB4
 #define MOTOR_RIGHT_2_LAT LATB3
 
-#define MOTOR_TURN_WAIT     10
+#define MOTOR_TURN_WAIT     25
 #define MOTOR_FORWARD_WAIT  50
     
 void drive_motors_init();

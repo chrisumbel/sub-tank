@@ -5,7 +5,7 @@
 #include "hardware_configuration.h"
 
 void wait(int n) {
-    for(int j = 0; j < 100; j++) {
+    for(int j = 0; j < n; j++) {
         __delay_ms(10);
     }      
 }
